@@ -1,106 +1,84 @@
-const form = document.querySelector("#contactForm");
-const message = document.querySelector("#formMessage");
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
 
-if (form) {
+if (contactForm) {
 
-    form.addEventListener("submit", async function(e) {
+    contactForm.addEventListener("submit", async function (event) {
 
-        e.preventDefault();
+        event.preventDefault();
 
-        const name = document.querySelector("#name").value;
-        const email = document.querySelector("#email").value;
-        const text = document.querySelector("#message").value;
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        formMessage.style.display = "block";
+
+        if (name === "" || email === "" || message === "") {
+
+            formMessage.textContent = "Please fill all the fields.";
+            formMessage.style.color = "red";
+
+            return;
+        }
+
+        formMessage.textContent = "Sending...";
+        formMessage.style.color = "white";
 
         try {
 
-           const response = await fetch("https://backend-up08.onrender.com/api/contact", {
+            const response = await fetch(
+                "http://localhost:5050/api/contact",
+                {
+                    method: "POST",
 
-                method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: text
-                })
-
-            });
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                }
+            );
 
             const data = await response.json();
 
             if (response.ok) {
 
-                message.style.color = "green";
-                message.innerHTML = "Thank you! Your message has been sent.";
+                formMessage.textContent =
+                    "✓ Message sent successfully!";
 
-                form.reset();
+                formMessage.style.display = "block";
+                formMessage.style.color = "lightgreen";
+
+                contactForm.reset();
 
             } else {
 
-                message.style.color = "red";
-                message.innerHTML = data.message;
+                formMessage.textContent =
+                    "✕ " + (data.message || "Message could not be sent.");
 
+                formMessage.style.display = "block";
+                formMessage.style.color = "red";
             }
 
         } catch (error) {
 
-            message.style.color = "red";
-            message.innerHTML = "Server is not running.";
+            console.error("Contact Form Error:", error);
 
-            console.log(error);
+            formMessage.textContent =
+                "✕ Unable to connect to the backend.";
+
+            formMessage.style.display = "block";
+            formMessage.style.color = "red";
         }
 
     });
 
 }
-// Load Projects from Backend
-
-const projectsContainer = document.querySelector("#projectsContainer");
-
-async function loadProjects() {
-
-    try {
-
-      const response = await fetch("https://backend-up08.onrender.com/api/projects");
-
-        const projects = await response.json();
-
-        projectsContainer.innerHTML = "";
-
-        projects.forEach(project => {
-
-            const projectCard = document.createElement("div");
-
-            projectCard.className = "project-card";
-
-            projectCard.innerHTML = `
-                <h3>${project.title}</h3>
-
-                <p>
-                    ${project.description}
-                </p>
-
-                <p>
-                    <b>Technology:</b> HTML, CSS, JavaScript, Python
-                </p>
-            `;
-
-            projectsContainer.appendChild(projectCard);
-
-        });
-
-    } catch (error) {
-
-        console.log("Error loading projects:", error);
-
-        projectsContainer.innerHTML =
-            "<p>Unable to load projects.</p>";
-
-    }
-
-}
-
-loadProjects();

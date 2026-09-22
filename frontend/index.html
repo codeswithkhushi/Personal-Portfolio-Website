@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Khushi | Personal Portfolio</title>
-
+<title>Khushi | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <nav>
-            <h2 class="logo">Khushi</h2>
-
+ <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                ✦ Khushi
+            </div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -24,104 +24,477 @@
             </div>
         </nav>
     </header>
-
-
-    <!-- Home -->
-    <section id="home" class="hero">
-
-        <div class="hero-text">
-            <p class="small-title">WELCOME TO MY PORTFOLIO</p>
-
-            <h1>Hi, I'm <span>Khushi</span></h1>
-
-            <h2>B.Tech CSE Student</h2>
-
-            <p>
-                I am passionate about programming, web development
-                and learning new technologies.I enjoy creating projects and improving my technical skills through countinuous learning.
+  <section id="home" class="hero-section section">
+     <div class="hero-content">
+            <p class="hero-small-text">
+                ✦ WELCOME TO MY PORTFOLIO ✦
             </p>
-
-            <a href="#projects" class="button">View My Projects</a>
+            <h1>
+                Hi, I'm Khushi
+            </h1>
+            <h2>
+                B.Tech CSE Student
+            </h2>
+            <p class="hero-description">
+                I am a Computer Science student passionate about programming,
+                web development and learning modern technologies. I enjoy
+                creating simple, useful and user-friendly web applications.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="primary-btn">
+                    View My Projects <span>→</span>
+                </a>
+                <a href="#contact" class="secondary-btn">
+                    Contact Me
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/codeswithkhushi"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-icon">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/khushi-67102939a"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-icon">
+                    LinkedIn
+                </a>
+            </div>
         </div>
-
     </section>
-
-
-    <!-- About -->
-    <section id="about">
-
-        <h2 class="section-title">About Me</h2>
-
-        <p class="about-text">
-            I am a B.Tech Computer Science Engineering student
-            interested in software development, programming and
-            modern web technologies. I enjoy learning new skills
-            and building useful projects.
-        </p>
-
-    </section>
-
-
-    <!-- Skills -->
-    <section id="skills">
-
-        <h2 class="section-title">My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <!-- <div class="skill">JavaScript</div> -->
-            <div class="skill">Java</div>
-            <!-- <div class="skill">C++</div> -->
-            <div class="skill">C</div>
-            <div class="skill">Python</div>
-            <!-- <div class="skill"> My SQL</div> -->
-
+    <section id="about" class="about-section section">
+        <div class="section-heading">
+            <p class="section-label">
+                ✦ ABOUT ME
+            </p>
+            <h2>
+                A Little About Me
+            </h2>
+            <p>
+                I am a B.Tech Computer Science Engineering student
+                interested in software development and web technologies.
+            </p>
         </div>
-
-    </section>
-
-
-    <!-- Projects -->
-    <section id="projects">
-
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-container" id="projectsContainer">
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">
+                    💻
+                </div>
+                <h3>
+                    Computer Science Student
+                </h3>
+                <p>
+                    Building my foundation in programming, databases,
+                    web development and software development.
+                </p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">
+                    ✦
+                </div>
+                <h3>
+                    Creative Developer
+                </h3>
+                <p>
+                    I enjoy designing clean and user-friendly websites
+                    and turning ideas into working projects.
+                </p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">
+                    📚
+                </div>
+                <h3>
+                    Always Learning
+                </h3>
+                <p>
+                    I continuously practice coding and explore new
+                    technologies to improve my development skills.
+                </p>
+            </div>
         </div>
-
     </section>
-
-
-    <!-- Contact -->
-    <section id="contact">
-
-        <h2 class="section-title">Contact Me</h2>
-
-        <form id="contactForm">
-
-            <input type="text" id="name" placeholder="Your Name" required>
-
-            <input type="email" id="email" placeholder="Your Email" required>
-
-            <textarea id="message" placeholder="Your Message" required></textarea>
-
-            <button type="submit" class="button">Send Message</button>
-
-        </form>
-
-        <p id="formMessage"></p>
-
+   <section id="skills" class="skills-section section">
+    <div class="section-heading">
+            <p class="section-label">
+                ✦ MY SKILLS
+            </p>
+            <h2>
+                Technologies I Work With
+            </h2>
+            <p>
+                Some of the technologies and programming languages
+                I have learned and practiced.
+            </p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-icon">🌐</span>
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🎨</span>
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">☕</span>
+                <h3>Java</h3>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">©</span>
+                <h3>C</h3>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🐍</span>
+                <h3>Python</h3>
+            </div>
+        </div>
     </section>
+    <section id="projects" class="projects-section section">
+<div class="section-heading">
+            <p class="section-label">
+                ✦ MY PROJECTS
+            </p>
+            <h2>
+                Things I've Built
+            </h2>
+            <p>
+                A few projects that helped me practice programming,
+                frontend development, backend development and databases.
+            </p>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card">
 
+                <div class="project-number">
+                    01
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>©️ 2026 Khushi | Personal Portfolio</p>
+                <div class="project-icon">
+                    ✦
+                </div>
+                <h3>
+                    Personal Portfolio Website
+                </h3>
+                <p>
+                    A responsive personal portfolio website designed
+                    to showcase my skills, projects, education and
+                    contact information.
+                </p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="YOUR_PROJECT_LINK"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
+                    View Project <span>→</span>
+                </a>
+            </article>
+            <article class="project-card">
+                <div class="project-number">
+                    02
+                </div>
+                <div class="project-icon">
+                    🛍
+                </div>
+                <h3>
+                    E-Commerce Website
+                </h3>
+                <p>
+                    An online shopping website featuring products,
+                    cart functionality, checkout features and
+                    database connectivity.
+                </p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>MySQL</span>
+                </div>
+                <a href="https://github.com/codeswithkhushi/ecommerce-web-application"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
+                    View Project <span>→</span>
+                </a>
+            </article>
+            <article class="project-card">
+                <div class="project-number">
+                    03
+                </div>
+                <div class="project-icon">
+                    ✎
+                </div>
+                <h3>
+                    Blog Platform
+                </h3>
+                <p>
+                    A blogging platform where users can create,
+                    manage and share blog posts with others,
+                    with backend APIs and database integration.
+                </p>
+              <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>MySQL</span>
+                </div>
+                <a href="https://github.com/codeswithkhushi/Blog-Platform-with-Comments"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="project-link">
+                    View Project <span>→</span>
+                </a>
+            </article>
+        </div>
+    </section>
+    <section id="contact" class="contact-section section">
+        <div class="section-heading">
+            <p class="section-label">
+                ✦ GET IN TOUCH
+            </p>
+            <h2>
+                Let's Connect
+            </h2>
+            <p>
+                Have a question, opportunity or just want to say hello?
+                I'd love to hear from you.
+            </p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-intro">
+                    <h3>
+                        Let's talk!
+                    </h3>
+                    <p>
+                        Whether you have an opportunity, a project idea,
+                        or simply want to connect, feel free to send me
+                        a message.
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+                      <div>
+                        <h3>
+                            Email
+                        </h3>
+                        <p>
+                            khushiraj21007@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        📍
+                    </div>
+                    <div>
+                        <h3>
+                            Location
+                        </h3>
+                        <p>
+                            India
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        💼
+                    </div>
+                    <div>
+                        <h3>
+                            LinkedIn
+                        </h3>
+                        <p>
+                            Let's connect professionally
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h3>
+                        Send Me a Message
+                    </h3>
+                    <p>
+                        Fill out the form below and I'll get back to you.
+                    </p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                Your Name
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                            >\
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Your Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            Your Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                            placeholder="Write your message here..."
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">
+                        Send Message
+                        <span>
+                            →
+                        </span>
+                    </button>
+                    <p id="formMessage"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                ✦ Khushi
+            </div>
+            <p class="footer-description">
+                B.Tech CSE Student | Aspiring Software Developer
+            </p>
+            <div class="footer-links">
+                <a href="#home">
+                    Home
+                </a>
+                <a href="#about">
+                    About
+                </a>
+                <a href="#skills">
+                    Skills
+                </a>
+                <a href="#projects">
+                    Projects
+                </a>
+                <a href="#contact">
+                    Contact
+                </a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/codeswithkhushi"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/khushi-67102939a"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Khushi. All Rights Reserved.
+                </p>
+                <p>
+                    Built with passion & creativity ✦
+                </p>
+            </div>
+        </div>
     </footer>
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+        contactForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+            const name =
+                document.getElementById("name").value.trim();
+            const email =
+                document.getElementById("email").value.trim();
+            const message =
+                document.getElementById("message").value.trim();
+            if (!name || !email || !message) {
+
+                formMessage.textContent =
+                    "Please fill all the fields.";
+                return;
+            }
+            formMessage.textContent =
+                "Sending...";
+            try {
+                const response = await fetch(
+                    "http://localhost:5050/api/contact",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            message: message
+                        })
+                    }
+                );
 
 
-    <script src="script.js"></script>
+                const data = await response.json();
+
+
+                if (response.ok) {
+
+                    formMessage.textContent =
+                        "Thank you! Your message has been sent.";
+
+                    contactForm.reset();
+
+                } else {
+
+                    formMessage.textContent =
+                        data.message || "Something went wrong.";
+
+                }
+
+            } catch (error) {
+
+                formMessage.textContent =
+                    "Unable to connect to the backend.";
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
+
