@@ -3,82 +3,84 @@ const formMessage = document.getElementById("formMessage");
 
 if (contactForm) {
 
-    contactForm.addEventListener("submit", async function (event) {
 
-        event.preventDefault();
+contactForm.addEventListener("submit", async function (event) {
 
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
+    event.preventDefault();
 
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const message = messageInput.value.trim();
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
 
-        formMessage.style.display = "block";
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
 
-        if (name === "" || email === "" || message === "") {
+    formMessage.style.display = "block";
 
-            formMessage.textContent = "Please fill all the fields.";
-            formMessage.style.color = "red";
+    if (name === "" || email === "" || message === "") {
 
-            return;
-        }
+        formMessage.textContent = "Please fill all the fields.";
+        formMessage.style.color = "red";
 
-        formMessage.textContent = "Sending...";
-        formMessage.style.color = "white";
+        return;
+    }
 
-        try {
+    formMessage.textContent = "Sending...";
+    formMessage.style.color = "white";
 
-            const response = await fetch(
-                "http://localhost:5050/api/contact",
-                {
-                    method: "POST",
+    try {
 
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+        const response = await fetch(
+            "https://khushi-portfolio-backend.onrender.com/api/contact",
+            {
+                method: "POST",
 
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        message: message
-                    })
-                }
-            );
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            const data = await response.json();
-
-            if (response.ok) {
-
-                formMessage.textContent =
-                    "✓ Message sent successfully!";
-
-                formMessage.style.display = "block";
-                formMessage.style.color = "lightgreen";
-
-                contactForm.reset();
-
-            } else {
-
-                formMessage.textContent =
-                    "✕ " + (data.message || "Message could not be sent.");
-
-                formMessage.style.display = "block";
-                formMessage.style.color = "red";
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
             }
+        );
 
-        } catch (error) {
+        const data = await response.json();
 
-            console.error("Contact Form Error:", error);
+        if (response.ok) {
 
             formMessage.textContent =
-                "✕ Unable to connect to the backend.";
+                "✓ Message sent successfully!";
+
+            formMessage.style.display = "block";
+            formMessage.style.color = "lightgreen";
+
+            contactForm.reset();
+
+        } else {
+
+            formMessage.textContent =
+                "✕ " + (data.message || "Message could not be sent.");
 
             formMessage.style.display = "block";
             formMessage.style.color = "red";
         }
 
-    });
+    } catch (error) {
+
+        console.error("Contact Form Error:", error);
+
+        formMessage.textContent =
+            "✕ Unable to connect to the backend.";
+
+        formMessage.style.display = "block";
+        formMessage.style.color = "red";
+    }
+
+});
+
 
 }
